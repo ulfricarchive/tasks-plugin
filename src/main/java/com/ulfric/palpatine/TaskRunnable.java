@@ -3,11 +3,14 @@ package com.ulfric.palpatine;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitTask;
 
+import java.util.ArrayList;
+import java.util.List;
+
 final class TaskRunnable implements Task { // TODO thread safety
 
 	private final Runnable runnable;
 	private BukkitTask task;
-	private boolean ran;
+	private List<Runnable> onExit;
 
 	public TaskRunnable(Runnable runnable) {
 		this.runnable = runnable;
@@ -28,27 +31,31 @@ final class TaskRunnable implements Task { // TODO thread safety
 		}
 
 		runnable.run();
-		this.ran = true;
+		onExit();
 	}
 
 	@Override
 	public void cancel() {
 		task.cancel();
+		onExit();
 	}
 
-	@Override
-	public boolean isComplete() {
-		return this.ran;
-	}
-
-	@Override
-	public boolean isQueued() {
-		return Bukkit.getScheduler().isQueued(task.getTaskId());
-	}
-
-	@Override
-	public boolean isRunning() {
+	private boolean isRunning() {
 		return Bukkit.getScheduler().isCurrentlyRunning(task.getTaskId());
+	}
+
+	@Override
+	public void onExit(Runnable runnable) {
+		if (onExit == null) {
+			onExit = new ArrayList<>();
+		}
+		onExit.add(runnable);
+	}
+
+	private void onExit() {
+		if (onExit != null) {
+			onExit.forEach(Runnable::run);
+		}
 	}
 
 }

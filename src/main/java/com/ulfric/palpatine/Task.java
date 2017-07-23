@@ -4,10 +4,6 @@ public interface Task extends Runnable {
 
 	void cancel();
 
-	boolean isComplete();
-
-	boolean isQueued();
-
-	boolean isRunning();
+	void onExit(Runnable runnable);
 
 }

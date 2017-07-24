@@ -8,7 +8,7 @@ import org.bukkit.scheduler.BukkitTask;
 
 import com.ulfric.palpatine.time.Tick;
 
-import java.time.Duration;
+import java.time.temporal.TemporalAmount;
 import java.util.Objects;
 
 public class Scheduler {
@@ -28,9 +28,9 @@ public class Scheduler {
 		return run;
 	}
 
-	public Task runOnMainThreadLater(Runnable runnable, Duration when) {
+	public Task runOnMainThreadLater(Runnable runnable, TemporalAmount when) {
 		TaskRunnable run = new TaskRunnable(runnable);
-		BukkitTask task = scheduler().runTaskLater(plugin, run, when.get(Tick.INSTANCE));
+		BukkitTask task = scheduler().runTaskLater(plugin, run, Tick.getAsTicks(when));
 		run.task(task);
 		return run;
 	}

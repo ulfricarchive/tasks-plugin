@@ -22,14 +22,14 @@ public class Scheduler {
 	}
 
 	public Task runOnMainThread(Runnable runnable) {
-		TaskRunnable run = new TaskRunnable(runnable);
+		TaskRunnable run = new TaskRunnable(runnable, Scheduling.ONCE);
 		BukkitTask task = scheduler().runTask(plugin, run);
 		run.task(task);
 		return run;
 	}
 
 	public Task runOnMainThreadLater(Runnable runnable, TemporalAmount delay) {
-		TaskRunnable run = new TaskRunnable(runnable);
+		TaskRunnable run = new TaskRunnable(runnable, Scheduling.ONCE);
 		BukkitTask task = scheduler().runTaskLater(plugin, run, Tick.getAsTicks(delay));
 		run.task(task);
 		return run;
@@ -40,7 +40,7 @@ public class Scheduler {
 	}
 
 	public Task runOnMainThreadRepeating(Runnable runnable, TemporalAmount start, TemporalAmount delay) {
-		TaskRunnable run = new TaskRunnable(runnable);
+		TaskRunnable run = new TaskRunnable(runnable, Scheduling.REPEATING);
 		long ticks = Tick.getAsTicks(delay);
 		BukkitTask task = scheduler().runTaskTimer(plugin, run, ticks, ticks);
 		run.task(task);

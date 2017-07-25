@@ -6,4 +6,6 @@ public interface Task extends Runnable {
 
 	void onExit(Runnable runnable);
 
+	boolean isRepeating();
+
 }

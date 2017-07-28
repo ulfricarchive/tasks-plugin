@@ -15,4 +15,12 @@
 	<version>1.0.0</version>
 	<name>Palpatine</name>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.ulfric.commons</groupId>
+			<artifactId>commons</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
 </project>

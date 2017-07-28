@@ -1,5 +1,7 @@
 package com.ulfric.palpatine.time;
 
+import com.ulfric.commons.time.TemporalHelper;
+
 import java.time.Duration;
 import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAmount;
@@ -13,7 +15,7 @@ public enum Tick implements TemporalUnit {
 	public static final long MILLIS_PER_TICK = 1_000 / TICKS_PER_SECOND;
 
 	public static long getAsTicks(TemporalAmount amount) {
-		long millis = Duration.from(amount).toMillis();
+		long millis = TemporalHelper.millisFrom(amount);
 		return millis / MILLIS_PER_TICK;
 	}
 

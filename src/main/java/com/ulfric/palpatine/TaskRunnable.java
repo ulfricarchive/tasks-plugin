@@ -6,7 +6,7 @@ import org.bukkit.scheduler.BukkitTask;
 import java.util.ArrayList;
 import java.util.List;
 
-final class TaskRunnable implements Task { // TODO thread safety
+final class TaskRunnable implements Task {
 
 	private final Runnable runnable;
 	private final boolean repeats;

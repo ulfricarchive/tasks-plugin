@@ -19,7 +19,7 @@ public enum Tick implements TemporalUnit {
 		return millis / MILLIS_PER_TICK;
 	}
 
-	private final Duration duration = Duration.ofMillis(MILLIS_PER_TICK); // TODO better way to convert millis to ticks, also this doesn't account for possible changes in server default tickrate
+	private final Duration duration = Duration.ofMillis(MILLIS_PER_TICK);
 
 	@Override
 	public long between(Temporal inclusive, Temporal exclusive) {

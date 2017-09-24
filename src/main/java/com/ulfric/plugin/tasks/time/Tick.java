@@ -1,4 +1,4 @@
-package com.ulfric.palpatine.time;
+package com.ulfric.plugin.tasks.time;
 
 import com.ulfric.commons.time.TemporalHelper;
 

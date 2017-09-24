@@ -1,4 +1,4 @@
-package com.ulfric.palpatine;
+package com.ulfric.plugin.tasks;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
@@ -6,7 +6,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
 
-import com.ulfric.palpatine.time.Tick;
+import com.ulfric.plugin.tasks.time.Tick;
 
 import java.time.temporal.TemporalAmount;
 import java.util.Objects;

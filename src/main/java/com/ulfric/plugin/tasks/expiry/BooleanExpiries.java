@@ -1,4 +1,4 @@
-package com.ulfric.palpatine.expiry;
+package com.ulfric.plugin.tasks.expiry;
 
 public enum BooleanExpiries implements Expiry {
 

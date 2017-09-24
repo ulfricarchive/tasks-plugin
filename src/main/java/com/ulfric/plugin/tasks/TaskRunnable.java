@@ -1,4 +1,4 @@
-package com.ulfric.palpatine;
+package com.ulfric.plugin.tasks;
 
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitTask;

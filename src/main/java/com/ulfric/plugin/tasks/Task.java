@@ -1,4 +1,4 @@
-package com.ulfric.palpatine;
+package com.ulfric.plugin.tasks;
 
 public interface Task extends Runnable {
 

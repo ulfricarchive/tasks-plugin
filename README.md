@@ -1,2 +1,2 @@
-# palpatine
-Minecraft tasks framework (DO IT!)
+# commons-spigot-tasks
+Minecraft tasks framework

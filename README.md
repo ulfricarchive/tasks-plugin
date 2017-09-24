@@ -1,2 +1,2 @@
-# commons-spigot-tasks
+# tasks-plugin
 Minecraft tasks framework

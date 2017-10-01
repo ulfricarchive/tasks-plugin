@@ -1,6 +1,6 @@
 name: Tasks
 main: com.ulfric.plugin.tasks.TasksPlugin
 version: 1.0.0
-author: Ulfric Projects
+author: Ulfric LLC
 load: STARTUP
 depend: [Platform]

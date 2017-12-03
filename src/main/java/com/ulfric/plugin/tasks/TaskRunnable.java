@@ -1,10 +1,10 @@
 package com.ulfric.plugin.tasks;
 
-import org.bukkit.Bukkit;
-import org.bukkit.scheduler.BukkitTask;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.bukkit.Bukkit;
+import org.bukkit.scheduler.BukkitTask;
 
 final class TaskRunnable implements Task {
 
@@ -28,10 +28,11 @@ final class TaskRunnable implements Task {
 
 	@Override
 	public void run() {
-		if (!isRunning()) {
-			cancel();
+		if (isRunning()) {
+			return;
 		}
 
+		cancel();
 		runnable.run();
 		onExit();
 	}

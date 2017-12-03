@@ -9,9 +9,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import com.ulfric.dragoon.extension.intercept.asynchronous.Asynchronous;
+import com.ulfric.dragoon.stereotype.Stereotype;
 
 @Retention(RUNTIME)
 @Target({ FIELD, METHOD, ANNOTATION_TYPE })
+@Stereotype
 @Asynchronous(EnsureMainThreadExecutorSupplier.class)
 public @interface OnMainThread {
 
